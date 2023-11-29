@@ -29,6 +29,8 @@ parsing_table = {
 def parse(input_string):
     stack = [0]  # Initialize stack with starting state
     pointer = 0  # Pointer to the current symbol in input_string
+    if input_string[len(input_string) - 1] != "$":
+        input_string += "$"
 
     while True:
         current_state = stack[-1]
@@ -61,9 +63,9 @@ def parse(input_string):
 
 
 # Test the parser with given strings
-#test_strings = ["(id+id)*id$", "id*id$", "(id*)$"]
-terminal_input= input("Please enter a string to parse: ")
-#for string in test_strings:
+# test_strings = ["(id+id)*id$", "id*id$", "(id*)$"]
+terminal_input = input("Please enter a string to parse: ")
+# for string in test_strings:
 print(f'\nParsing "{terminal_input}":')
 result = parse(terminal_input)
 print(f"Output: String is {'accepted' if result else 'not accepted'}.\n")
