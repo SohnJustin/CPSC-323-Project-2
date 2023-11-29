@@ -61,8 +61,9 @@ def parse(input_string):
 
 
 # Test the parser with given strings
-test_strings = ["(id+id)*id$", "id*id$", "(id*)$"]
-for string in test_strings:
-    print(f'\nParsing "{string}":')
-    result = parse(string)
-    print(f"Output: String is {'accepted' if result else 'not accepted'}.\n")
+#test_strings = ["(id+id)*id$", "id*id$", "(id*)$"]
+terminal_input= input("Please enter a string to parse: ")
+#for string in test_strings:
+print(f'\nParsing "{terminal_input}":')
+result = parse(terminal_input)
+print(f"Output: String is {'accepted' if result else 'not accepted'}.\n")
